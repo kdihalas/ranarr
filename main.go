@@ -5,6 +5,7 @@ import (
 )
 
 var (
+	Password string
 	Bot_token    string
 	Sonarr_url   string
 	Sonarr_token string
@@ -18,6 +19,7 @@ var (
 )
 
 func init() {
+	rootCmd.PersistentFlags().StringVar(&Password, "password", "", "telegram password for authentication")
 	rootCmd.PersistentFlags().StringVar(&Bot_token, "token", "", "telegram token")
 	rootCmd.PersistentFlags().StringVar(&Sonarr_url, "surl", "", "sonarr url")
 	rootCmd.PersistentFlags().StringVar(&Sonarr_token, "stoken", "", "sonarr token")
